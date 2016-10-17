@@ -1,12 +1,12 @@
 #-------------------------------------------------------------------------------
 # Name:        parcels_main.py
 # Purpose:     Processes county parcel data from MnGeo WAF site all the way
-#              through to a statewide layer. Dictionary driven.
+#              through to a statewide layer. Object-oriented architecture.
 #
 # Authors:     Jeff Reinhart, Jessica Schuler
 #
 # Created:     2016-10-16
-# Updated:     2016-10-16
+# Updated:     2016-10-17
 #-------------------------------------------------------------------------------
 
 def main():
