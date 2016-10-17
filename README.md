@@ -15,7 +15,7 @@ Add the path for the folder to __parcels_base_classes.py__ _**userObject**_ _sel
 
 A parcels\_in\_minnesota\_template then needs to be added to the geodatabase workspace. A zipped ArcGIS 10.2.2 geodatabase containing the template has been included in this repository. We recommend you unzip this in a different folder if you plan to branch and make contributions to this repository.
 
-The process runs from __parcels_main.py__. You will be prompted for your username and password for the MnGeo parcel data site (http://geoint.lmic.state.mn.us/parcels/).
+The process runs from __parcels_main.py__. You will be prompted for your username and password for a temporary MnGeo web-accessible folder. If you do not have access to this folder, contact your GIS staff.
 
 Next I will describe the structure from the bottom up. The module __parcels_base_classes.py__ contains a class _**countyEtlParams**_. This class sets all of the variables needed for running the ETL process. Attributes with "\*\_exists" are for statewide schema field names where * = FIELD_NAME. The attribute _transferType_ defines what sort of processing needs to be done to load to the statewide schema. If a _transferType_ is standard across all counties, it is set in _**countyEtlParams**_. Otherwise it is set for each county. The attribute _fieldLength_ is used to shorten strings to fit it text fields.
 
