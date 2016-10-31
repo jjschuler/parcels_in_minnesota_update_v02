@@ -15,7 +15,7 @@ class countyEtl(countyEtlParams):
         self.sourceOwnershipTable = r''
         self.joinInField = r''
         self.joinJoinField = r''
-        self.PIN_exists.fieldTransferList = []
+        self.PIN_exists.fieldTransferList = ['PRCL_NBR']
         self.BLDG_NUM_exists.fieldTransferList = []
         self.BLDG_NUM_exists.transferType = ''
         self.PREFIX_DIR_exists.fieldTransferList = []
