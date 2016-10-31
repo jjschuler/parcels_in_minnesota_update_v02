@@ -11,6 +11,10 @@ class countyEtl(countyEtlParams):
         self.mngeo_web_id = r'Redwood 127'
         self.sourceZipFile = r'REDW_parcels.zip'
         self.sourcePolygons = r'RedwoodCO_Parcels07-015-2016.shp'
+        self.sourceOwnershipZipFile = r''
+        self.sourceOwnershipTable = r''
+        self.joinInField = r''
+        self.joinJoinField = r''
         self.PIN_exists.fieldTransferList = []
         self.BLDG_NUM_exists.fieldTransferList = []
         self.BLDG_NUM_exists.transferType = ''

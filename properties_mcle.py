@@ -9,6 +9,12 @@ class countyEtl(countyEtlParams):
         self.county_id = r'085'
         self.cty_abbr = r'MCLE'
         self.mngeo_web_id = r'McLeod 085'
+        self.sourceZipFile = r''
+        self.sourcePolygons = r''
+        self.sourceOwnershipZipFile = r''
+        self.sourceOwnershipTable = r''
+        self.joinInField = r''
+        self.joinJoinField = r''
         self.PIN_exists.fieldTransferList = []
         self.BLDG_NUM_exists.fieldTransferList = []
         self.BLDG_NUM_exists.transferType = ''

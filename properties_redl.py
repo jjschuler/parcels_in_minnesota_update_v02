@@ -10,6 +10,11 @@ class countyEtl(countyEtlParams):
         self.cty_abbr = r'REDL'
         self.mngeo_web_id = r'Red Lake 125'
         self.sourceZipFile = r'REDL_parcels.zip.lnk'
+        self.sourcePolygons = r''
+        self.sourceOwnershipZipFile = r''
+        self.sourceOwnershipTable = r''
+        self.joinInField = r''
+        self.joinJoinField = r''
         self.PIN_exists.fieldTransferList = []
         self.BLDG_NUM_exists.fieldTransferList = []
         self.BLDG_NUM_exists.transferType = ''

@@ -11,6 +11,10 @@ class countyEtl(countyEtlParams):
         self.mngeo_web_id = r'Cook 031'
         self.sourceZipFile = r'COOK_parcels.zip'
         self.sourcePolygons = r'CookCountyTaxParcels.shp'
+        self.sourceOwnershipZipFile = r''
+        self.sourceOwnershipTable = r''
+        self.joinInField = r''
+        self.joinJoinField = r''
         self.PIN_exists.fieldTransferList = ['PARCELNBR']
         self.BLDG_NUM_exists.fieldTransferList = ['HOUSE_NBR']
         self.BLDG_NUM_exists.transferType = ''

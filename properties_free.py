@@ -11,6 +11,10 @@ class countyEtl(countyEtlParams):
         self.mngeo_web_id = r'Freeborn 047'
         self.sourceZipFile = r'FREE_parcels.zip'
         self.sourcePolygons = r'FreebornCounty_Parcels.shp'
+        self.sourceOwnershipZipFile = r''
+        self.sourceOwnershipTable = r''
+        self.joinInField = r''
+        self.joinJoinField = r''
         self.PIN_exists.fieldTransferList = ['PIN']
         self.BLDG_NUM_exists.fieldTransferList = ['HOUSENUM']
         self.BLDG_NUM_exists.transferType = ''

@@ -10,6 +10,11 @@ class countyEtl(countyEtlParams):
         self.cty_abbr = r'COTT'
         self.mngeo_web_id = r'Cottonwood 033'
         self.sourceZipFile = r'COTT_gdb.zip'
+        self.sourcePolygons = r''
+        self.sourceOwnershipZipFile = r''
+        self.sourceOwnershipTable = r''
+        self.joinInField = r''
+        self.joinJoinField = r''
         self.PIN_exists.fieldTransferList = []
         self.BLDG_NUM_exists.fieldTransferList = []
         self.BLDG_NUM_exists.transferType = ''

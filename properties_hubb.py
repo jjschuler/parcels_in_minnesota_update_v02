@@ -11,6 +11,10 @@ class countyEtl(countyEtlParams):
         self.mngeo_web_id = r'Hubbard 057'
         self.sourceZipFile = r'HUBB.zip'
         self.sourcePolygons = r'Hubbard.gdb\Parcels_07102016'
+        self.sourceOwnershipZipFile = r''
+        self.sourceOwnershipTable = r''
+        self.joinInField = r''
+        self.joinJoinField = r''
         self.PIN_exists.fieldTransferList = ['hubbgis_GIS_Parcels_PIN']
         self.BLDG_NUM_exists.fieldTransferList = []
         self.BLDG_NUM_exists.transferType = ''

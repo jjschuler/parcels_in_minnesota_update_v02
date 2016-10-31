@@ -11,6 +11,7 @@ class countyEtl(countyEtlParams):
         self.mngeo_web_id = r'Anoka 003'
         self.sourceZipFile = r'ANOK_parcels.zip'
         self.sourcePolygons = r'Parcels_UTM.shp'
+        self.sourceOwnershipZipFile = r''
         self.sourceOwnershipTable = r'GIS_Extract_TXT.xlsx'
         self.joinInField = r'PIN2'
         self.joinJoinField = r'PIN'

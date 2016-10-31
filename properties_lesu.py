@@ -9,6 +9,12 @@ class countyEtl(countyEtlParams):
         self.county_id = r'079'
         self.cty_abbr = r'LESU'
         self.mngeo_web_id = r'Le Sueur 079'
+        self.sourceZipFile = r''
+        self.sourcePolygons = r''
+        self.sourceOwnershipZipFile = r''
+        self.sourceOwnershipTable = r''
+        self.joinInField = r''
+        self.joinJoinField = r''
         self.PIN_exists.fieldTransferList = []
         self.BLDG_NUM_exists.fieldTransferList = []
         self.BLDG_NUM_exists.transferType = ''

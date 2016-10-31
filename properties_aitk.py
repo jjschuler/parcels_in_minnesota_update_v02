@@ -11,6 +11,7 @@ class countyEtl(countyEtlParams):
         self.mngeo_web_id = r'Aitkin 001'
         self.sourceZipFile = r'AITK.zip'
         self.sourcePolygons = r'Aitk_GSC_Data.gdb\TAX_PARCELS'
+        self.sourceOwnershipZipFile = r''
         self.sourceOwnershipTable = r'Aitk_GSC_Data.gdb\TAXDATA'
         self.joinInField = r'PRINT_KEY'
         self.joinJoinField = r'PRCL_NBR'

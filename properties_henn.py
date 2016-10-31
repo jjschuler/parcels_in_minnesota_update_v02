@@ -11,6 +11,10 @@ class countyEtl(countyEtlParams):
         self.mngeo_web_id = r'Hennepin 053'
         self.sourceZipFile = r'HENN_parcels.zip'
         self.sourcePolygons = r'CADASTRAL_TAX_PROPERTY_BASE.shp'
+        self.sourceOwnershipZipFile = r''
+        self.sourceOwnershipTable = r''
+        self.joinInField = r''
+        self.joinJoinField = r''
         self.PIN_exists.fieldTransferList = ['PID']
         self.BLDG_NUM_exists.fieldTransferList = ['HOUSE_NO']
         self.BLDG_NUM_exists.transferType = ''

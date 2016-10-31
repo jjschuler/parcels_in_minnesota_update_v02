@@ -11,6 +11,10 @@ class countyEtl(countyEtlParams):
         self.mngeo_web_id = r'Jackson 063'
         self.sourceZipFile = r'JACK_parcels.zip'
         self.sourcePolygons = r'JCParcels071316.shp'
+        self.sourceOwnershipZipFile = r''
+        self.sourceOwnershipTable = r''
+        self.joinInField = r''
+        self.joinJoinField = r''
         self.PIN_exists.fieldTransferList = ['PIN']
         self.BLDG_NUM_exists.fieldTransferList = ['V1LOCHOUSE']
         self.BLDG_NUM_exists.transferType = ''

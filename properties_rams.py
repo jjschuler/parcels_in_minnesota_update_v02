@@ -11,6 +11,10 @@ class countyEtl(countyEtlParams):
         self.mngeo_web_id = r'Ramsey 123'
         self.sourceZipFile = r'RAMS.zip'
         self.sourcePolygons = r'PublicData\RamseyPublicData.gdb\UTM\CDSTL_AttributedParcelPolyUTM'
+        self.sourceOwnershipZipFile = r''
+        self.sourceOwnershipTable = r''
+        self.joinInField = r''
+        self.joinJoinField = r''
         self.PIN_exists.fieldTransferList = []
         self.BLDG_NUM_exists.fieldTransferList = []
         self.BLDG_NUM_exists.transferType = ''
