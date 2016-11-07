@@ -6,14 +6,13 @@
 # Authors:     Jeff Reinhart, Jessica Schuler
 #
 # Created:     2016-10-16
-# Updated:     2016-10-16
+# Updated:     2016-11-06
 #-------------------------------------------------------------------------------
 
 def main():
     import arcpy, os, sys, datetime, traceback, unicodedata
     from parcels_base_classes import userObject
     import parcels_processing_functions as pProcess
-    from parcels_county_compile import countyCompile
 
     #---------------------------------------------------------------------------
     # Append or create new parcels_in_minnesota feature class. Update string as
@@ -57,9 +56,6 @@ def main():
 
     # set up feature class for statewide schema
     pProcess.templateSetup(append_OR_createnew, wkspGdb)
-
-    # run counties
-    countiesObj = countyCompile()
 
     # county run list as [run county bool, county abbr]
     countyRunList = [
@@ -158,11 +154,12 @@ def main():
             print "Running for {0}".format(runPair[1])
 
             '''If updating code and need to get autofill for class attributes,
-            then comment next line in and following two lines out.
+            then comment next two lines in and following two lines out.
             Switch back before run.'''
-            ##cObj = countiesObj.aitk()
-            theClass = getattr(countiesObj, runPair[1])
-            cObj = theClass()
+##            import properties_aitk
+##            cObj = properties_aitk.createCountyObj()
+            propertiesCountyModule = __import__("properties_"+runPair[1])
+            cObj = propertiesCountyModule.createCountyObj()
 
             # download and extract data
             if ftp_OR_local == "ftp":
@@ -208,13 +205,12 @@ def main():
                     for row level control that will handle different transfer types and where
                     multiple fields from county data map to one field in statewide schema.'''
                     for attr in iter(sorted(dir(cObj))):
-                        if attr[-7:] == "_exists":
+                        if attr[-10:] == "_fieldList":
                             # get fieldTransferList
-                            fieldTransferObj = getattr(cObj, attr)
-                            fieldTransferList = getattr(fieldTransferObj, 'fieldTransferList')
+                            fieldTransferList = getattr(cObj, attr)
                             if len(fieldTransferList) > 0:
                                 # append field names to insert cursor that will insert to statewide schema
-                                fieldsInsert.append(attr[:-7])
+                                fieldsInsert.append(attr[:-10])
                                 # append field names to search cursor that will search county data
                                 for field in fieldTransferList:
                                     fieldsSearch.append(field)
@@ -242,10 +238,9 @@ def main():
                                 # skip shape and COUNTY_ID, build field values for remaining
                                 for field in fieldsInsert[1:-1]:
                                     # add remaining values using fieldTransferList, fieldLength, transferType
-                                    fieldTransferObj = getattr(cObj, field+'_exists')
-                                    fieldTransferList = getattr(fieldTransferObj, 'fieldTransferList')
-                                    fieldLength = getattr(fieldTransferObj, 'fieldLength')
-                                    transferType = getattr(fieldTransferObj, 'transferType')
+                                    fieldTransferList = getattr(cObj, field+'_fieldList')
+                                    fieldLength = getattr(cObj, field+'_fieldLength')
+                                    transferType = getattr(cObj, field+'_transferType')
                                     # begin logic for transfer type, defaults to string that
                                     # is truncated if needed
                                     if transferType == 'statewidePin':
