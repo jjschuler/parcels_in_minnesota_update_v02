@@ -15,7 +15,7 @@ def createCountyObj():
     countyObj.sourceOwnershipTable = r''
     countyObj.joinInField = r''
     countyObj.joinJoinField = r''
-    countyObj.PIN_fieldList = []
+    countyObj.PIN_fieldList = ['PIN']
     countyObj.BLDG_NUM_fieldList = []
     countyObj.BLDG_NUM_transferType = ''
     countyObj.PREFIX_DIR_fieldList = []
@@ -30,11 +30,11 @@ def createCountyObj():
     countyObj.SUFFIX_DIR_transferType = ''
     countyObj.UNIT_INFO_fieldList = []
     countyObj.UNIT_INFO_transferType = ''
-    countyObj.CITY_fieldList = []
+    countyObj.CITY_fieldList = ['Site_City']
     countyObj.CITY_transferType = ''
     countyObj.CITY_USPS_fieldList = []
     countyObj.CITY_USPS_transferType = ''
-    countyObj.ZIP_fieldList = []
+    countyObj.ZIP_fieldList = ['Site_Zip']
     countyObj.ZIP_transferType = ''
     countyObj.ZIP4_fieldList = []
     countyObj.ZIP4_transferType = ''
@@ -44,7 +44,7 @@ def createCountyObj():
     countyObj.BLOCK_transferType = ''
     countyObj.LOT_fieldList = []
     countyObj.LOT_transferType = ''
-    countyObj.ACRES_POLY_fieldList = []
+    countyObj.ACRES_POLY_fieldList = ['Acreage']
     countyObj.ACRES_DEED_fieldList = []
     countyObj.USE1_DESC_fieldList = []
     countyObj.USE1_DESC_transferType = ''
@@ -62,7 +62,7 @@ def createCountyObj():
     countyObj.OWNER_NAME_transferType = ''
     countyObj.OWNER_MORE_fieldList = []
     countyObj.OWNER_MORE_transferType = ''
-    countyObj.OWN_ADD_L1_fieldList = []
+    countyObj.OWN_ADD_L1_fieldList = ['Site_Add']
     countyObj.OWN_ADD_L1_transferType = ''
     countyObj.OWN_ADD_L2_fieldList = []
     countyObj.OWN_ADD_L2_transferType = ''
@@ -140,13 +140,13 @@ def createCountyObj():
     countyObj.TOWNSHIP_fieldList = []
     countyObj.RANGE_fieldList = []
     countyObj.RANGE_DIR_fieldList = []
-    countyObj.LEGAL_DESC_fieldList = []
+    countyObj.LEGAL_DESC_fieldList = ['Tax_Descr']
     countyObj.LEGAL_DESC_transferType = ''
     countyObj.EDIT_DATE_fieldList = []
     countyObj.EDIT_DATE_transferType = 'Date'
     countyObj.EXPORT_DATE_fieldList = []
     countyObj.EXPORT_DATE_transferType = 'Date'
-    countyObj.ORIG_PIN_fieldList = []
+    countyObj.ORIG_PIN_fieldList = ['PIN']
     countyObj.ORIG_PIN_transferType = ''
 
     return countyObj

@@ -146,7 +146,7 @@ def createCountyObj():
     countyObj.EDIT_DATE_transferType = 'Date'
     countyObj.EXPORT_DATE_fieldList = []
     countyObj.EXPORT_DATE_transferType = 'Date'
-    countyObj.ORIG_PIN_fieldList = []
+    countyObj.ORIG_PIN_fieldList = ['PARCEL_NUM']
     countyObj.ORIG_PIN_transferType = ''
 
     return countyObj

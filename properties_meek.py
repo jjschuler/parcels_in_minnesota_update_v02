@@ -15,7 +15,7 @@ def createCountyObj():
     countyObj.sourceOwnershipTable = r''
     countyObj.joinInField = r''
     countyObj.joinJoinField = r''
-    countyObj.PIN_fieldList = []
+    countyObj.PIN_fieldList = ['PID']
     countyObj.BLDG_NUM_fieldList = []
     countyObj.BLDG_NUM_transferType = ''
     countyObj.PREFIX_DIR_fieldList = []
@@ -58,14 +58,14 @@ def createCountyObj():
     countyObj.MULTI_USES_transferType = ''
     countyObj.LANDMARK_fieldList = []
     countyObj.LANDMARK_transferType = ''
-    countyObj.OWNER_NAME_fieldList = []
+    countyObj.OWNER_NAME_fieldList = ['NAME1']
     countyObj.OWNER_NAME_transferType = ''
-    countyObj.OWNER_MORE_fieldList = []
+    countyObj.OWNER_MORE_fieldList = ['NAME2']
     countyObj.OWNER_MORE_transferType = ''
-    countyObj.OWN_ADD_L1_fieldList = []
+    countyObj.OWN_ADD_L1_fieldList = ['ADDRESS']
     countyObj.OWN_ADD_L1_transferType = ''
-    countyObj.OWN_ADD_L2_fieldList = []
-    countyObj.OWN_ADD_L2_transferType = ''
+    countyObj.OWN_ADD_L2_fieldList = ['CITY', 'STATE', 'ZIP']
+    countyObj.OWN_ADD_L2_transferType = 'concatTruncateLastAddrLine'
     countyObj.OWN_ADD_L3_fieldList = []
     countyObj.OWN_ADD_L3_transferType = ''
     countyObj.OWN_ADD_L4_fieldList = []
@@ -146,7 +146,7 @@ def createCountyObj():
     countyObj.EDIT_DATE_transferType = 'Date'
     countyObj.EXPORT_DATE_fieldList = []
     countyObj.EXPORT_DATE_transferType = 'Date'
-    countyObj.ORIG_PIN_fieldList = []
+    countyObj.ORIG_PIN_fieldList = ['PID']
     countyObj.ORIG_PIN_transferType = ''
 
     return countyObj
