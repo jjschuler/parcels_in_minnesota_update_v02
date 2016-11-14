@@ -15,7 +15,7 @@ def createCountyObj():
     countyObj.sourceOwnershipTable = r''
     countyObj.joinInField = r''
     countyObj.joinJoinField = r''
-    countyObj.PIN_fieldList = []
+    countyObj.PIN_fieldList = ['Parcel_ID']
     countyObj.BLDG_NUM_fieldList = []
     countyObj.BLDG_NUM_transferType = ''
     countyObj.PREFIX_DIR_fieldList = []
@@ -38,11 +38,11 @@ def createCountyObj():
     countyObj.ZIP_transferType = ''
     countyObj.ZIP4_fieldList = []
     countyObj.ZIP4_transferType = ''
-    countyObj.PLAT_NAME_fieldList = []
+    countyObj.PLAT_NAME_fieldList = ['SUBD']
     countyObj.PLAT_NAME_transferType = ''
-    countyObj.BLOCK_fieldList = []
+    countyObj.BLOCK_fieldList = ['BLOCK']
     countyObj.BLOCK_transferType = ''
-    countyObj.LOT_fieldList = []
+    countyObj.LOT_fieldList = ['LOT']
     countyObj.LOT_transferType = ''
     countyObj.ACRES_POLY_fieldList = []
     countyObj.ACRES_DEED_fieldList = []
@@ -146,7 +146,7 @@ def createCountyObj():
     countyObj.EDIT_DATE_transferType = 'Date'
     countyObj.EXPORT_DATE_fieldList = []
     countyObj.EXPORT_DATE_transferType = 'Date'
-    countyObj.ORIG_PIN_fieldList = []
+    countyObj.ORIG_PIN_fieldList = ['Parcel_ID']
     countyObj.ORIG_PIN_transferType = ''
 
     return countyObj
