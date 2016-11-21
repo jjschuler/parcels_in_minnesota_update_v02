@@ -16,7 +16,7 @@ def createCountyObj():
     countyObj.joinInField = r''
     countyObj.joinJoinField = r''
     countyObj.PIN_fieldList = ['ParcelID']
-    countyObj.BLDG_NUM_fieldList = []
+    countyObj.BLDG_NUM_fieldList = ['HouseNumbe']
     countyObj.BLDG_NUM_transferType = ''
     countyObj.PREFIX_DIR_fieldList = []
     countyObj.PREFIX_DIR_transferType = ''
@@ -30,7 +30,7 @@ def createCountyObj():
     countyObj.SUFFIX_DIR_transferType = ''
     countyObj.UNIT_INFO_fieldList = []
     countyObj.UNIT_INFO_transferType = ''
-    countyObj.CITY_fieldList = []
+    countyObj.CITY_fieldList = ['City']
     countyObj.CITY_transferType = ''
     countyObj.CITY_USPS_fieldList = []
     countyObj.CITY_USPS_transferType = ''
@@ -44,7 +44,7 @@ def createCountyObj():
     countyObj.BLOCK_transferType = ''
     countyObj.LOT_fieldList = []
     countyObj.LOT_transferType = ''
-    countyObj.ACRES_POLY_fieldList = []
+    countyObj.ACRES_POLY_fieldList = ['Acreage']
     countyObj.ACRES_DEED_fieldList = []
     countyObj.USE1_DESC_fieldList = []
     countyObj.USE1_DESC_transferType = ''
@@ -58,16 +58,16 @@ def createCountyObj():
     countyObj.MULTI_USES_transferType = ''
     countyObj.LANDMARK_fieldList = []
     countyObj.LANDMARK_transferType = ''
-    countyObj.OWNER_NAME_fieldList = []
+    countyObj.OWNER_NAME_fieldList = ['OwnerName1']
     countyObj.OWNER_NAME_transferType = ''
-    countyObj.OWNER_MORE_fieldList = []
+    countyObj.OWNER_MORE_fieldList = ['OwnerName2']
     countyObj.OWNER_MORE_transferType = ''
-    countyObj.OWN_ADD_L1_fieldList = []
+    countyObj.OWN_ADD_L1_fieldList = ['OwnerAddr1']
     countyObj.OWN_ADD_L1_transferType = ''
-    countyObj.OWN_ADD_L2_fieldList = []
+    countyObj.OWN_ADD_L2_fieldList = ['OwnerAddr2']
     countyObj.OWN_ADD_L2_transferType = ''
-    countyObj.OWN_ADD_L3_fieldList = []
-    countyObj.OWN_ADD_L3_transferType = ''
+    countyObj.OWN_ADD_L3_fieldList = ['OwnerCity', 'OwnerState', 'OwnerZip']
+    countyObj.OWN_ADD_L3_transferType = 'concatTruncateLastAddrLine'
     countyObj.OWN_ADD_L4_fieldList = []
     countyObj.OWN_ADD_L4_transferType = ''
     countyObj.TAX_NAME_fieldList = []
@@ -90,7 +90,7 @@ def createCountyObj():
     countyObj.EMV_BLDG_fieldList = []
     countyObj.EMV_TOTAL_fieldList = []
     countyObj.TAX_CAPAC_fieldList = []
-    countyObj.TOTAL_TAX_fieldList = []
+    countyObj.TOTAL_TAX_fieldList = ['TotTax']
     countyObj.SPEC_ASSES_fieldList = []
     countyObj.TAX_EXEMPT_fieldList = []
     countyObj.TAX_EXEMPT_transferType = ''
@@ -116,7 +116,7 @@ def createCountyObj():
     countyObj.HEATING_transferType = ''
     countyObj.COOLING_fieldList = []
     countyObj.COOLING_transferType = ''
-    countyObj.YEAR_BUILT_fieldList = []
+    countyObj.YEAR_BUILT_fieldList = ['YearBuilt']
     countyObj.NUM_UNITS_fieldList = []
     countyObj.SALE_DATE_fieldList = []
     countyObj.SALE_DATE_transferType = 'Date'
@@ -140,7 +140,7 @@ def createCountyObj():
     countyObj.TOWNSHIP_fieldList = []
     countyObj.RANGE_fieldList = []
     countyObj.RANGE_DIR_fieldList = []
-    countyObj.LEGAL_DESC_fieldList = []
+    countyObj.LEGAL_DESC_fieldList = ['LegalDesc']
     countyObj.LEGAL_DESC_transferType = ''
     countyObj.EDIT_DATE_fieldList = []
     countyObj.EDIT_DATE_transferType = 'Date'
