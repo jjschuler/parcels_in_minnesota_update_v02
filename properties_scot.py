@@ -141,7 +141,7 @@ def createCountyObj():
     countyObj.RANGE_fieldList = []
     countyObj.RANGE_DIR_fieldList = []
     countyObj.LEGAL_DESC_fieldList = ['LEGAL1', 'LEGAL2']
-    countyObj.LEGAL_DESC_transferType = ''
+    countyObj.LEGAL_DESC_transferType = 'concatTruncateTwoFields'
     countyObj.EDIT_DATE_fieldList = []
     countyObj.EDIT_DATE_transferType = 'Date'
     countyObj.EXPORT_DATE_fieldList = []
