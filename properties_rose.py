@@ -15,7 +15,7 @@ def createCountyObj():
     countyObj.sourceOwnershipTable = r''
     countyObj.joinInField = r''
     countyObj.joinJoinField = r''
-    countyObj.PIN_fieldList = []
+    countyObj.PIN_fieldList = ['RoseauAS400_dbo_tblParcelJoin_PIN']
     countyObj.BLDG_NUM_fieldList = []
     countyObj.BLDG_NUM_transferType = ''
     countyObj.PREFIX_DIR_fieldList = []
@@ -30,7 +30,7 @@ def createCountyObj():
     countyObj.SUFFIX_DIR_transferType = ''
     countyObj.UNIT_INFO_fieldList = []
     countyObj.UNIT_INFO_transferType = ''
-    countyObj.CITY_fieldList = []
+    countyObj.CITY_fieldList = ['RoseauAS400_dbo_tblParcelJoin_PhysCity']
     countyObj.CITY_transferType = ''
     countyObj.CITY_USPS_fieldList = []
     countyObj.CITY_USPS_transferType = ''
@@ -38,14 +38,14 @@ def createCountyObj():
     countyObj.ZIP_transferType = ''
     countyObj.ZIP4_fieldList = []
     countyObj.ZIP4_transferType = ''
-    countyObj.PLAT_NAME_fieldList = []
+    countyObj.PLAT_NAME_fieldList = ['RoseauAS400_dbo_tblParcelJoin_Subdivision_Name']
     countyObj.PLAT_NAME_transferType = ''
-    countyObj.BLOCK_fieldList = []
+    countyObj.BLOCK_fieldList = ['RoseauAS400_dbo_tblParcelJoin_Block']
     countyObj.BLOCK_transferType = ''
-    countyObj.LOT_fieldList = []
+    countyObj.LOT_fieldList = ['RoseauAS400_dbo_tblParcelJoin_Lot']
     countyObj.LOT_transferType = ''
-    countyObj.ACRES_POLY_fieldList = []
-    countyObj.ACRES_DEED_fieldList = []
+    countyObj.ACRES_POLY_fieldList = ['Parcels_ACRES_2']
+    countyObj.ACRES_DEED_fieldList = ['RoseauAS400_dbo_tblParcelJoin_Acres']
     countyObj.USE1_DESC_fieldList = []
     countyObj.USE1_DESC_transferType = ''
     countyObj.USE2_DESC_fieldList = []
@@ -70,12 +70,12 @@ def createCountyObj():
     countyObj.OWN_ADD_L3_transferType = ''
     countyObj.OWN_ADD_L4_fieldList = []
     countyObj.OWN_ADD_L4_transferType = ''
-    countyObj.TAX_NAME_fieldList = []
+    countyObj.TAX_NAME_fieldList = ['RoseauAS400_dbo_tblParcelJoin_TaxName']
     countyObj.TAX_NAME_transferType = ''
-    countyObj.TAX_ADD_L1_fieldList = []
+    countyObj.TAX_ADD_L1_fieldList = ['RoseauAS400_dbo_tblParcelJoin_TaxAddr']
     countyObj.TAX_ADD_L1_transferType = ''
-    countyObj.TAX_ADD_L2_fieldList = []
-    countyObj.TAX_ADD_L2_transferType = ''
+    countyObj.TAX_ADD_L2_fieldList = ['RoseauAS400_dbo_tblParcelJoin_TaxCity','RoseauAS400_dbo_tblParcelJoin_TaxState','RoseauAS400_dbo_tblParcelJoin_TaxZip']
+    countyObj.TAX_ADD_L2_transferType = 'concatTruncateLastAddrLine'
     countyObj.TAX_ADD_L3_fieldList = []
     countyObj.TAX_ADD_L3_transferType = ''
     countyObj.TAX_ADD_L4_fieldList = []
@@ -121,7 +121,7 @@ def createCountyObj():
     countyObj.SALE_DATE_fieldList = []
     countyObj.SALE_DATE_transferType = 'Date'
     countyObj.SALE_VALUE_fieldList = []
-    countyObj.SCHOOL_DST_fieldList = []
+    countyObj.SCHOOL_DST_fieldList = ['RoseauAS400_dbo_tblParcelJoin_School_District']
     countyObj.SCHOOL_DST_transferType = ''
     countyObj.WSHD_DIST_fieldList = []
     countyObj.WSHD_DIST_transferType = ''
@@ -136,17 +136,17 @@ def createCountyObj():
     countyObj.AGPRE_EXPD_fieldList = []
     countyObj.AGPRE_EXPD_transferType = 'Date'
     countyObj.PARC_CODE_fieldList = []
-    countyObj.SECTION_fieldList = []
-    countyObj.TOWNSHIP_fieldList = []
-    countyObj.RANGE_fieldList = []
+    countyObj.SECTION_fieldList = ['RoseauAS400_dbo_tblParcelJoin_lglSection']
+    countyObj.TOWNSHIP_fieldList = ['RoseauAS400_dbo_tblParcelJoin_Township']
+    countyObj.RANGE_fieldList = ['RoseauAS400_dbo_tblParcelJoin_Range']
     countyObj.RANGE_DIR_fieldList = []
-    countyObj.LEGAL_DESC_fieldList = []
+    countyObj.LEGAL_DESC_fieldList = ['RoseauAS400_dbo_tblParcelJoin_Legal']
     countyObj.LEGAL_DESC_transferType = ''
     countyObj.EDIT_DATE_fieldList = []
     countyObj.EDIT_DATE_transferType = 'Date'
     countyObj.EXPORT_DATE_fieldList = []
     countyObj.EXPORT_DATE_transferType = 'Date'
-    countyObj.ORIG_PIN_fieldList = []
+    countyObj.ORIG_PIN_fieldList = ['RoseauAS400_dbo_tblParcelJoin_PIN']
     countyObj.ORIG_PIN_transferType = ''
 
     return countyObj
