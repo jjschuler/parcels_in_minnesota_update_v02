@@ -15,7 +15,7 @@ def createCountyObj():
     countyObj.sourceOwnershipTable = r''
     countyObj.joinInField = r''
     countyObj.joinJoinField = r''
-    countyObj.PIN_fieldList = []
+    countyObj.PIN_fieldList = ['PARCEL_NUM']
     countyObj.BLDG_NUM_fieldList = []
     countyObj.BLDG_NUM_transferType = ''
     countyObj.PREFIX_DIR_fieldList = []
@@ -58,9 +58,9 @@ def createCountyObj():
     countyObj.MULTI_USES_transferType = ''
     countyObj.LANDMARK_fieldList = []
     countyObj.LANDMARK_transferType = ''
-    countyObj.OWNER_NAME_fieldList = []
+    countyObj.OWNER_NAME_fieldList = ['ParcelOwne']
     countyObj.OWNER_NAME_transferType = ''
-    countyObj.OWNER_MORE_fieldList = []
+    countyObj.OWNER_MORE_fieldList = ['ParcelAddr']
     countyObj.OWNER_MORE_transferType = ''
     countyObj.OWN_ADD_L1_fieldList = []
     countyObj.OWN_ADD_L1_transferType = ''
@@ -70,15 +70,15 @@ def createCountyObj():
     countyObj.OWN_ADD_L3_transferType = ''
     countyObj.OWN_ADD_L4_fieldList = []
     countyObj.OWN_ADD_L4_transferType = ''
-    countyObj.TAX_NAME_fieldList = []
+    countyObj.TAX_NAME_fieldList = ['PRIM_TAX_1']
     countyObj.TAX_NAME_transferType = ''
-    countyObj.TAX_ADD_L1_fieldList = []
+    countyObj.TAX_ADD_L1_fieldList = ['PRIM_TAX_3']
     countyObj.TAX_ADD_L1_transferType = ''
-    countyObj.TAX_ADD_L2_fieldList = []
+    countyObj.TAX_ADD_L2_fieldList = ['PRIM_TAX_4']
     countyObj.TAX_ADD_L2_transferType = ''
-    countyObj.TAX_ADD_L3_fieldList = []
+    countyObj.TAX_ADD_L3_fieldList = ['PRIM_TAX_5']
     countyObj.TAX_ADD_L3_transferType = ''
-    countyObj.TAX_ADD_L4_fieldList = []
+    countyObj.TAX_ADD_L4_fieldList = ['PRIM_TAX_6']
     countyObj.TAX_ADD_L4_transferType = ''
     countyObj.OWNERSHIP_fieldList = []
     countyObj.OWNERSHIP_transferType = ''
@@ -146,7 +146,7 @@ def createCountyObj():
     countyObj.EDIT_DATE_transferType = 'Date'
     countyObj.EXPORT_DATE_fieldList = []
     countyObj.EXPORT_DATE_transferType = 'Date'
-    countyObj.ORIG_PIN_fieldList = []
+    countyObj.ORIG_PIN_fieldList = ['PARCEL_NUM']
     countyObj.ORIG_PIN_transferType = ''
 
     return countyObj
