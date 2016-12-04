@@ -1,0 +1,160 @@
+from parcels_base_classes import countyEtlParams
+
+def createCountyObj():
+
+    countyObj = countyEtlParams()
+
+    countyObj.county_name = ['Anoka', 'Carver', 'Dakota', 'Hennepin', 'Ramsey', 'Scott', 'Washington']
+    countyObj.cty_fips = ['3', '19', '37', '53', '123', '139', '163']
+    countyObj.county_id = ['003', '019', '037', '053', '123', '139', '163']
+    countyObj.cty_abbr = ['ANOK_mgc', 'CARV_mgc', 'DAKO_mgc', 'HENN_mgc', 'RAMS_mgc', 'SCOT_mgc', 'WASH_mgc']
+    countyObj.mngeo_web_id = ['Anoka 003', 'Carver 019', 'Dakota 037', 'Hennepin 053', 'Ramsey 123', 'Scott 139', 'Washington 163']
+    countyObj.sourceZipFile = r'fgdb_plan_regonal_parcels_2015.zip'
+    countyObj.sourcePolygons = [
+        r'plan_regonal_parcels_2015.gdb\Parcels2015Anoka',
+        r'plan_regonal_parcels_2015.gdb\Parcels2015Carver',
+        r'plan_regonal_parcels_2015.gdb\Parcels2015Dakota',
+        r'plan_regonal_parcels_2015.gdb\Parcels2015Hennepin',
+        r'plan_regonal_parcels_2015.gdb\Parcels2015Ramsey',
+        r'plan_regonal_parcels_2015.gdb\Parcels2015Scott',
+        r'plan_regonal_parcels_2015.gdb\Parcels2015Washington'
+        ]
+    countyObj.sourceOwnershipZipFile = ['', '', '', '', '', '', '']
+    countyObj.sourceOwnershipTable = ['', '', '', '', '', '', '']
+    countyObj.joinInField = ['', '', '', '', '', '', '']
+    countyObj.joinJoinField = ['', '', '', '', '', '', '']
+    countyObj.PIN_fieldList = ['PIN']
+    countyObj.BLDG_NUM_fieldList = ['BLDG_NUM']
+    countyObj.BLDG_NUM_transferType = 'defaultTransfer'
+    countyObj.PREFIX_DIR_fieldList = ['PREFIX_DIR']
+    countyObj.PREFIX_DIR_transferType = 'defaultTransfer'
+    countyObj.PREFIXTYPE_fieldList = ['PREFIXTYPE']
+    countyObj.PREFIXTYPE_transferType = 'defaultTransfer'
+    countyObj.STREETNAME_fieldList = ['STREETNAME']
+    countyObj.STREETNAME_transferType = 'defaultTransfer'
+    countyObj.STREETTYPE_fieldList = ['STREETTYPE']
+    countyObj.STREETTYPE_transferType = 'defaultTransfer'
+    countyObj.SUFFIX_DIR_fieldList = ['SUFFIX_DIR']
+    countyObj.SUFFIX_DIR_transferType = 'defaultTransfer'
+    countyObj.UNIT_INFO_fieldList = ['UNIT_INFO']
+    countyObj.UNIT_INFO_transferType = 'defaultTransfer'
+    countyObj.CITY_fieldList = ['CITY']
+    countyObj.CITY_transferType = 'defaultTransfer'
+    countyObj.CITY_USPS_fieldList = ['CITY_USPS']
+    countyObj.CITY_USPS_transferType = 'defaultTransfer'
+    countyObj.ZIP_fieldList = ['ZIP']
+    countyObj.ZIP_transferType = 'defaultTransfer'
+    countyObj.ZIP4_fieldList = ['ZIP4']
+    countyObj.ZIP4_transferType = 'defaultTransfer'
+    countyObj.PLAT_NAME_fieldList = ['PLAT_NAME']
+    countyObj.PLAT_NAME_transferType = 'defaultTransfer'
+    countyObj.BLOCK_fieldList = ['BLOCK']
+    countyObj.BLOCK_transferType = 'defaultTransfer'
+    countyObj.LOT_fieldList = ['LOT']
+    countyObj.LOT_transferType = 'defaultTransfer'
+    countyObj.ACRES_POLY_fieldList = ['ACRES_POLY']
+    countyObj.ACRES_DEED_fieldList = ['ACRES_DEED']
+    countyObj.USE1_DESC_fieldList = ['USE1_DESC']
+    countyObj.USE1_DESC_transferType = 'defaultTransfer'
+    countyObj.USE2_DESC_fieldList = ['USE2_DESC']
+    countyObj.USE2_DESC_transferType = 'defaultTransfer'
+    countyObj.USE3_DESC_fieldList = ['USE3_DESC']
+    countyObj.USE3_DESC_transferType = 'defaultTransfer'
+    countyObj.USE4_DESC_fieldList = ['USE4_DESC']
+    countyObj.USE4_DESC_transferType = 'defaultTransfer'
+    countyObj.MULTI_USES_fieldList = ['MULTI_USES']
+    countyObj.MULTI_USES_transferType = 'defaultTransfer'
+    countyObj.LANDMARK_fieldList = ['LANDMARK']
+    countyObj.LANDMARK_transferType = 'defaultTransfer'
+    countyObj.OWNER_NAME_fieldList = ['OWNER_NAME']
+    countyObj.OWNER_NAME_transferType = 'defaultTransfer'
+    countyObj.OWNER_MORE_fieldList = ['OWNER_MORE']
+    countyObj.OWNER_MORE_transferType = 'defaultTransfer'
+    countyObj.OWN_ADD_L1_fieldList = ['OWN_ADD_L1']
+    countyObj.OWN_ADD_L1_transferType = 'defaultTransfer'
+    countyObj.OWN_ADD_L2_fieldList = ['OWN_ADD_L2']
+    countyObj.OWN_ADD_L2_transferType = 'defaultTransfer'
+    countyObj.OWN_ADD_L3_fieldList = ['OWN_ADD_L3']
+    countyObj.OWN_ADD_L3_transferType = 'defaultTransfer'
+    countyObj.OWN_ADD_L4_fieldList = []
+    countyObj.OWN_ADD_L4_transferType = 'defaultTransfer'
+    countyObj.TAX_NAME_fieldList = ['TAX_NAME']
+    countyObj.TAX_NAME_transferType = 'defaultTransfer'
+    countyObj.TAX_ADD_L1_fieldList = ['TAX_ADD_L1']
+    countyObj.TAX_ADD_L1_transferType = 'defaultTransfer'
+    countyObj.TAX_ADD_L2_fieldList = ['TAX_ADD_L2']
+    countyObj.TAX_ADD_L2_transferType = 'defaultTransfer'
+    countyObj.TAX_ADD_L3_fieldList = ['TAX_ADD_L3']
+    countyObj.TAX_ADD_L3_transferType = 'defaultTransfer'
+    countyObj.TAX_ADD_L4_fieldList = []
+    countyObj.TAX_ADD_L4_transferType = 'defaultTransfer'
+    countyObj.OWNERSHIP_fieldList = []
+    countyObj.OWNERSHIP_transferType = 'defaultTransfer'
+    countyObj.HOMESTEAD_fieldList = ['HOMESTEAD']
+    countyObj.HOMESTEAD_transferType = 'defaultTransfer'
+    countyObj.TAX_YEAR_fieldList = []
+    countyObj.MARKET_YEAR_fieldList = []
+    countyObj.EMV_LAND_fieldList = ['EMV_LAND']
+    countyObj.EMV_BLDG_fieldList = ['EMV_BLDG']
+    countyObj.EMV_TOTAL_fieldList = ['EMV_TOTAL']
+    countyObj.TAX_CAPAC_fieldList = ['TAX_CAPAC']
+    countyObj.TOTAL_TAX_fieldList = ['TOTAL_TAX']
+    countyObj.SPEC_ASSES_fieldList = ['SPEC_ASSES']
+    countyObj.TAX_EXEMPT_fieldList = ['TAX_EXEMPT']
+    countyObj.TAX_EXEMPT_transferType = 'defaultTransfer'
+    countyObj.XUSE1_DESC_fieldList = ['XUSE1_DESC']
+    countyObj.XUSE1_DESC_transferType = 'defaultTransfer'
+    countyObj.XUSE2_DESC_fieldList = ['XUSE2_DESC']
+    countyObj.XUSE2_DESC_transferType = 'defaultTransfer'
+    countyObj.XUSE3_DESC_fieldList = ['XUSE3_DESC']
+    countyObj.XUSE3_DESC_transferType = 'defaultTransfer'
+    countyObj.XUSE4_DESC_fieldList = ['XUSE4_DESC']
+    countyObj.XUSE4_DESC_transferType = 'defaultTransfer'
+    countyObj.DWELL_TYPE_fieldList = ['DWELL_TYPE']
+    countyObj.DWELL_TYPE_transferType = 'defaultTransfer'
+    countyObj.HOME_STYLE_fieldList = ['HOME_STYLE']
+    countyObj.HOME_STYLE_transferType = 'defaultTransfer'
+    countyObj.FIN_SQ_FT_fieldList = ['FIN_SQ_FT']
+    countyObj.GARAGE_fieldList = ['GARAGE']
+    countyObj.GARAGE_transferType = 'defaultTransfer'
+    countyObj.GARAGESQFT_fieldList = ['GARAGESQFT']
+    countyObj.BASEMENT_fieldList = ['BASEMENT']
+    countyObj.BASEMENT_transferType = 'defaultTransfer'
+    countyObj.HEATING_fieldList = ['HEATING']
+    countyObj.HEATING_transferType = 'defaultTransfer'
+    countyObj.COOLING_fieldList = ['COOLING']
+    countyObj.COOLING_transferType = 'defaultTransfer'
+    countyObj.YEAR_BUILT_fieldList = ['YEAR_BUILT']
+    countyObj.NUM_UNITS_fieldList = ['NUM_UNITS']
+    countyObj.SALE_DATE_fieldList = ['SALE_DATE']
+    countyObj.SALE_DATE_transferType = 'ToDate'
+    countyObj.SALE_VALUE_fieldList = ['SALE_VALUE']
+    countyObj.SCHOOL_DST_fieldList = ['SCHOOL_DST']
+    countyObj.SCHOOL_DST_transferType = 'defaultTransfer'
+    countyObj.WSHD_DIST_fieldList = ['WSHD_DIST']
+    countyObj.WSHD_DIST_transferType = 'defaultTransfer'
+    countyObj.GREEN_ACRE_fieldList = ['GREEN_ACRE']
+    countyObj.GREEN_ACRE_transferType = 'defaultTransfer'
+    countyObj.OPEN_SPACE_fieldList = ['OPEN_SPACE']
+    countyObj.OPEN_SPACE_transferType = 'defaultTransfer'
+    countyObj.AG_PRESERV_fieldList = ['AG_PRESERV']
+    countyObj.AG_PRESERV_transferType = 'defaultTransfer'
+    countyObj.AGPRE_ENRD_fieldList = ['AGPRE_ENRD']
+    countyObj.AGPRE_ENRD_transferType = 'ToDate'
+    countyObj.AGPRE_EXPD_fieldList = ['AGPRE_EXPD']
+    countyObj.AGPRE_EXPD_transferType = 'ToDate'
+    countyObj.PARC_CODE_fieldList = ['PARC_CODE']
+    countyObj.SECTION_fieldList = []
+    countyObj.TOWNSHIP_fieldList = []
+    countyObj.RANGE_fieldList = []
+    countyObj.RANGE_DIR_fieldList = []
+    countyObj.LEGAL_DESC_fieldList = []
+    countyObj.LEGAL_DESC_transferType = 'defaultTransfer'
+    countyObj.EDIT_DATE_fieldList = []
+    countyObj.EDIT_DATE_transferType = 'ToDate'
+    countyObj.EXPORT_DATE_fieldList = []
+    countyObj.EXPORT_DATE_transferType = 'ToDate'
+    countyObj.ORIG_PIN_fieldList = []
+    countyObj.ORIG_PIN_transferType = 'defaultTransfer'
+
+    return countyObj
