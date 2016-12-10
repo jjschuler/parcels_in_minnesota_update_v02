@@ -51,7 +51,7 @@ require(
           }
 
           // update symbology based on python script content
-          $.get("../parcels_main.py", function(data){
+          $.get("https://cdn.rawgit.com/jeffreinhart/parcels_in_minnesota_update_v02/master/parcels_main.py", function(data){
             var startIndex;
             var nextBraceIndex;
             var scriptText;
