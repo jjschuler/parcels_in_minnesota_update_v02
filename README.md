@@ -1,30 +1,42 @@
 # parcels_in_minnesota_update_v02
 Processing spatial parcel data from counties in Minnesota to the statewide parcel feature class schema.
 
-The architecture of this process is intended to be easy to use for the person managing the field mapping. Object-oriented design is used where it made sense at the time, but we make no claims as to the architecture being "correct" object-oriented design. It works and that is what counts. :bowtie:
+The architecture of this process is intended to be easy to use for the person managing the field mapping. That is why it was organized with a file for each county's field mapping settings.
 
-The script has error handling for each level of the process. Errors are recorded in error_log.txt which is created or appended to in the folder where these modules are stored. If something fails from dataset processing errors down to record level errors, the script will write to the error log and move on.
+The script has error handling for each level of the process. Errors are recorded in error_log.txt which is created or appended to in the root folder of this project. If something fails from dataset processing errors down to errors with individual records, the script will write to the error log and continue. OBJECTID values are logged for errors from individual records so you can find the issue with the record.
 
+## Basic Setup
 Prior to running, there are two workspaces that need to be set up:
-* a file geodatabase
-* a folder
+<ul>
+<li>a file geodatabase
+<li>a folder
+</ul>
 
-Add the path for the file geodatabase to **parcels_base_classes.py** _**userObject**_ _self.wkspGdb_.
+To set up your environment:
 
-Add the path for the folder to __parcels_base_classes.py__ _**userObject**_ _self.sourcePath_.
+1. Create a file geodatabase or use the geodatabase in the included parcels.gdb.zip (is version ArcGIS 10.2.2). It is recommended to put this geodatabase in a different folder if you plan to branch and contribute to this repository.
 
-A parcels\_in\_minnesota\_template then needs to be added to the geodatabase workspace. A zipped ArcGIS 10.2.2 geodatabase containing the template has been included in this repository. We recommend you unzip this in a different folder if you plan to branch and make contributions to this repository.
+2. A feature class named parcels_in_minnesota_template then needs to be added to the geodatabase workspace (included in parcels.gdb.zip).
 
-The process runs from __parcels_main.py__. You will be prompted for your username and password for a temporary MnGeo web-accessible folder. If you do not have access to this folder, contact your GIS staff.
+3. Add the path for the file geodatabase to **parcels_base_classes.py** `userObject self.wkspGdb`.
 
-Next I will describe the structure from the bottom up. The module __parcels_base_classes.py__ contains a class _**countyEtlParams**_. This class sets all of the variables needed for running the ETL process. Attributes with "\*\_fieldList" are for statewide schema field names where * = FIELD_NAME. The attribute "\*\_transferType" for each field defines what sort of processing needs to be done to load to the statewide schema. If a "\*\_transferType" is standard across all counties, it is set in _**countyEtlParams**_. Otherwise it is set for each county. The attribute "\*\_fieldLength" for each field is used to shorten strings to fit it text fields.
+4. Create a folder to store source data that will be downloaded.
 
-There is a **properties_*.py** module for each county. Each of these modules contains a function _**createCountyObj**_, which creates a **parcels_base_classes._countyEtlParams_** class. Attributes that could be potentially updated for each county are set in the  _**createCountyObj**_ function. If multiple fields are used, there MUST be a "\*\_transferType" (more on these when we get to **parcels_main.py**).
+5. Add the path for the folder to **parcels_base_classes.py** `userObject self.sourcePath`.
 
-The **parcels_main.py** module has a lot a comments to describe processes. It also relies on functions in **parcels_processing_functions.py** (imported as _pProcess_). Some important code to update when running:
-* _append_OR_createnew_ decides whether to create a new statewide schema feature class named parcels\_in\_minnesota or append to an existing one.
-* _countyRunList_ determines which counties will run. Set the first item in each sub-list to True or False. The first commit in this repository is set to run all of the counties that had field mapping completed at the time.
-* _transferType_ is used to guide how values are mapped and to keep the array for the insertCursor parallel to the searchCursor array. If multiple fields are used in the _fieldList_, the _transferType_ process must increase the counter by the count of fields instead of just by 1.
+The process runs from **parcels_main.py**. When you run the script, you will be prompted for your username and password for a temporary MnGeo web-accessible folder. If you do not have access to this folder, contact your GIS staff.
+
+This is the structure from the bottom up. The module **parcels_base_classes.py** contains a class `countyEtlParams`. This class contains all of the variables that may be needed for running the ETL process. Attributes with `*_fieldList` are for statewide schema field names where * = FIELD_NAME. The attribute `*_transferType` for each field defines what sort of processing needs to be done to load to the statewide schema. If a `*_transferType` is standard across all counties, it is set in the `countyEtlParams` class. Otherwise it is set for each county. The attribute `*_fieldLength` for each field is used to shorten strings to fit it text fields.
+
+There is a **properties_*.py** module for each county. Each of these modules contains a function `createCountyObj`, which creates a `parcels_base_classes.countyEtlParams` object. Attributes that could be potentially updated for each county are set in the  `createCountyObj` function. If multiple fields are used, there MUST be a `*_transferType` (more on these when we get to **parcels_main.py**).
+
+The **parcels_main.py** module has a lot a comments to describe processes. It also relies on functions in **parcels_processing_functions.py** (imported as `pProcess`). Some important code to update when running:
+* `append_OR_createnew` determines whether to create a new statewide schema feature class named parcels\_in\_minnesota or append to an existing one.
+* `ftp_OR_local` determines whether to download the source files to your source folder or to use your local source files that are already downloaded to your source folder.
+* `project_to_wkspgdb` determines whether to copy/project a feature class for the county from your source folder to your workspace geodatabase or to use the existing feature class that you already copied/projected (feature class gets named with county abbreviation).
+* `run_transfer` determines whether or not to extract from the workspace geodatabase feature class and load to the statewide schema.
+* `countyRunList` determines which counties will run. Set the first item in each sub-list to `True` or `False`. The list will be kept up to date for all counties that have been completed as script updates are committed.
+* Functions for transfering different value types to the statewide schema included in **parcels_processing_functions.py** must be named to match `_transferType` strings in **properties_*.py** or in **parcels_base_classes.py** `countyEtlParams`.
 
 ## Counties
 If you work with a county and would like to contribute to the field mapping process, please feel free! If you have some data in a separate table that needs to be joined, this tutorial doesn't cover that (you could join in the data before doing the following or dig deaper into the code to see how to make it happen there. For a layer that has all attributes included, follow these general steps for the quickest route to contributing your field mapping info:
