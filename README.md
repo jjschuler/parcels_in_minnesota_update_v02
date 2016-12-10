@@ -26,6 +26,8 @@ To set up your environment:
 
 The process runs from **parcels_main.py**. When you run the script, you will be prompted for your username and password for a temporary MnGeo web-accessible folder. If you do not have access to this folder, contact your GIS staff.
 
+## Architecture
+
 This is the structure from the bottom up. The module **parcels_base_classes.py** contains a class `countyEtlParams`. This class contains all of the variables that may be needed for running the ETL process. Attributes with `*_fieldList` are for statewide schema field names where * = FIELD_NAME. The attribute `*_transferType` for each field defines what sort of processing needs to be done to load to the statewide schema. If a `*_transferType` is standard across all counties, it is set in the `countyEtlParams` class. Otherwise it is set for each county. The attribute `*_fieldLength` for each field is used to shorten strings to fit it text fields.
 
 There is a **properties_*.py** module for each county. Each of these modules contains a function `createCountyObj`, which creates a `parcels_base_classes.countyEtlParams` object. Attributes that could be potentially updated for each county are set in the  `createCountyObj` function. If multiple fields are used, there MUST be a `*_transferType` (more on these when we get to **parcels_main.py**).
