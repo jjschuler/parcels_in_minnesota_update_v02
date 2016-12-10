@@ -5,6 +5,8 @@ The architecture of this process is intended to be easy to use for the person ma
 
 The script has error handling for each level of the process. Errors are recorded in error_log.txt which is created or appended to in the root folder of this project. If something fails from dataset processing errors down to errors with individual records, the script will write to the error log and continue. OBJECTID values are logged for errors from individual records so you can find the issue with the record.
 
+To see the status of the project, check out the <a href = "https://jeffreinhart.github.io/parcels_in_minnesota_update_v02/" target="_blank">Parcel ETL Process Development Status Map.</a>
+
 ## Basic Setup
 Prior to running, there are two workspaces that need to be set up:
 <ul>
