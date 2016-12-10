@@ -19,7 +19,7 @@ require(
         
         function addFeatureLayer() {
           // add counties
-          var countiesLayer = new FeatureLayer("http://services.arcgis.com/P3ePLMYs2RVChkJx/ArcGIS/rest/services/USA_Counties_Generalized/FeatureServer/0",{
+          var countiesLayer = new FeatureLayer("https://services.arcgis.com/P3ePLMYs2RVChkJx/ArcGIS/rest/services/USA_Counties_Generalized/FeatureServer/0",{
               // parameters here
               infoTemplate: new InfoTemplate(" ", "${NAME}")
           });
